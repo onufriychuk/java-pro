@@ -1,14 +1,15 @@
 package ru.otus.java.pro;
 
-@SuppressWarnings({"java:S1186", "java:S1135", "java:S1172"}) // при выполнении ДЗ эту аннотацию надо удалить
+import java.util.ArrayDeque;
+
 public class CustomerReverseOrder {
+    private final ArrayDeque<Customer> arrayDeque = new ArrayDeque<>();
 
-    // todo: 2. надо реализовать методы этого класса
-    // надо подобрать подходящую структуру данных, тогда решение будет в "две строчки"
-
-    public void add(Customer customer) {}
+    public void add(Customer customer) {
+        arrayDeque.push(customer);
+    }
 
     public Customer take() {
-        return null; // это "заглушка, чтобы скомилировать"
+        return arrayDeque.pop();
     }
 }
